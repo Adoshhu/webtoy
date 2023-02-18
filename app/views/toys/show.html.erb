@@ -1,0 +1,49 @@
+</br>
+<table class="table table-bordered table-dark" style="width: 90%" >
+ <thead>
+    <tr >
+
+        <th class="table-middle">Owner</th>
+        <th class="table-middle">ToyName</th>    
+        <th class="table-middle">Price</th>
+        <th class="table-middle">Content</th>
+
+        <% if @toy.user_id == current_user.id %>
+        <th class="table-middle" colspan="2"></th>
+        <% end %>
+        
+   </tr>
+   
+ </thead>
+    
+ <tbody>
+    <tr class="table-striped table-success " >
+
+        <td class="table-middle">
+            <%= @toy.user.email %>        
+        </td>
+        <td class="table-middle">
+            <%= @toy.toyname %>        
+        </td>
+         <td class="table-middle">
+            <%= @toy.price %>
+        </td>    
+        <td class="table-middle">
+            <%= @toy.content %>        
+        </td>
+            <% if @toy.user_id == current_user.id %>  
+        <td class="table-middle">      
+            <%= link_to 'edit', edit_toy_path, class:'btn btn-secondary' %>
+        </td>
+        <td class="table-middle">
+            <%= button_to 'delete', toy_path, class:'btn btn-danger', method: :delete %>        
+        </td>
+            <% end %>
+            
+    </tr>
+ </tbody>
+</table>
+
+<%= link_to 'back', toys_path, class:'btn btn-secondary' %>
+
+

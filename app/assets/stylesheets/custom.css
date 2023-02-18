@@ -1,0 +1,31 @@
+.button {
+    height: 50px;
+    width: 150px;
+    background-color: #7a9b9f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+
+  .table-middle {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .card {
+    margin: 10px;
+  }
+
+
+  

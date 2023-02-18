@@ -1,0 +1,26 @@
+<div class= "container"><h1>Update Toy</h1></div>
+
+<section class="container">
+    <%= form_with model: @toy, local: true do |form| %>
+
+        <div class='field form-group'>
+            <%= form.label :toyname %>
+            <%= form.text_field :toyname, class:'form-control' %>
+        </div>
+    
+        <div class='field form-group'>
+            <%= form.label :content %>
+            <%= form.text_field :content, class:'form-control' %>
+        </div>
+
+        <div class='field form-group'>
+            <%= form.label :price %>
+            <%= form.text_field :price, class: 'form-control' %>
+        </div>
+    </br>
+        <%= form.hidden_field :user_id, value: current_user.id %>    
+        <%= form.submit "Update", class:"btn btn-outline-primary" %>
+    
+
+    <% end %>
+</section>

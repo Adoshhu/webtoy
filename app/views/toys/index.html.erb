@@ -1,0 +1,18 @@
+<h3><%= current_user.username %> Toys</h3>
+
+ <div class="card-container">
+<% @toy.each do |toy| %>
+
+ <div class="card border-dark mb-3" style="max-width: 18rem;">
+  <img src="<%= asset_path 'car.jpg' %>" class="card-img-top" alt="Image">
+  <div class="card-body text-secondary">
+    <h5 class="card-title"><%= toy.toyname %></h5>
+    <p class="card-text"><%= toy.content %></p>
+    <p class="card-text">P<%= toy.price %></p>
+    <%= link_to 'show', toy_path(toy.id), class:'btn btn-secondary' %>
+    
+  </div>
+ </div>
+
+<% end %>
+</div>
