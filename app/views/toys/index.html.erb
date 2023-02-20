@@ -4,7 +4,7 @@
 <% @toy.each do |toy| %>
 
  <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <img src="<%= asset_path 'car.jpg' %>" class="card-img-top" alt="Image">
+  <%= image_tag(toy.image.variant(resize: "300x300") || "default-image.png") %>
   <div class="card-body text-secondary">
     <h5 class="card-title"><%= toy.toyname %></h5>
     <p class="card-text"><%= toy.content %></p>
