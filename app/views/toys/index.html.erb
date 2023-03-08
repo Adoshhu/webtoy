@@ -1,18 +1,40 @@
 <h3><%= current_user.username %> Toys</h3>
 
+
+<table>
+    <div id="carouselExampleControls" class="carousel slide mx-auto" data-bs-ride="carousel" style="width: 300px; margin-bottom: 50px;">
+  <div class="carousel-inner">
+    <% @toy.each_with_index do |toy, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <%= image_tag(toy.image,class: "d-block w-100") %>
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  </table>
+
+
  <div class="card-container">
 <% @toy.each do |toy| %>
 
  <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <%= image_tag(toy.image.variant(resize: "300x300") || "default-image.png") %>
+  <%= image_tag (toy.image) %>
   <div class="card-body text-secondary">
     <h5 class="card-title"><%= toy.toyname %></h5>
     <p class="card-text"><%= toy.content %></p>
     <p class="card-text">P<%= toy.price %></p>
-    <%= link_to 'show', toy_path(toy.id), class:'btn btn-secondary' %>
-    
+    <%= link_to 'show', toy_path(toy.id), class:'btn btn-secondary' %>    
   </div>
  </div>
-
 <% end %>
 </div>

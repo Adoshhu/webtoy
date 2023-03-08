@@ -5,8 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav" >
-    
+      <div class="navbar-nav" >    
         <% if logged_in? %>
           <%= link_to 'Toys', toys_path, class:"nav-link active"%>
           <%= link_to 'Create Toy', new_toy_path, class:"nav-link active"%>
@@ -15,10 +14,8 @@
         <% else %>
           <%= link_to 'Sign up', signup_path, class:"nav-link active"%>
           <%= link_to 'Sign in', login_path, class:"nav-link active"%>
-        <% end %>
-       
-      </div>
-     
+        <% end %>       
+      </div>     
     </div>
   </div>
 </nav>
